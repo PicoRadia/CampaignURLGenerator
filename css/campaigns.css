@@ -1,0 +1,67 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+body {
+    padding : 0px;
+    margin-top: 0;
+}
+
+form input[type="text"] {
+    text-transform: lowercase;
+}
+
+.divider {
+    height:20px;
+}
+
+section {
+    height:600px;
+    padding-top:50px;
+    padding-bottom:50px;
+    overflow:auto;
+}
+
+#output {
+    height: auto;
+}
+
+
+  
+.bg-2 {
+	background: url('./index.png') no-repeat center center fixed;
+    color:#fff;
+    background-size: 20%;
+    padding : 0px;
+    margin : 0px;
+}
+
+
+#footer {
+    height: 50px;
+    background-color:#585858;
+    margin-top:50px;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+#footer a {
+  color:#585858;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

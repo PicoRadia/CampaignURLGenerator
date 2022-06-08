@@ -1,0 +1,470 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style>
+    body {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  </style>
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/campaigns.css">
+
+  <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+
+<body>
+
+  <div class="divider"></div>
+  <section class="bg-2">
+    <div class="col-sm-10  text-center">
+    </div>
+  </section>
+  <div class="divider"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2> Générateur de liens de tracking</h2>
+
+          </div>
+          <script> 
+                $(document).ready(function () {
+                resetForms();
+                });
+
+                function resetForms() {
+                document.forms['campaign_info'].reset();
+                }
+          </script>
+          <div class="panel-body">
+            <form id="campaign_info" class="form-horizontal">
+              <fieldset>
+
+                <!-- Form Name -->
+                <legend> Saisissez l'URL complet du site web et les informations de la campagne </legend>
+
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="url"> URL du site web</label>
+                  <label class="error" for="url" id="url_error">Ce champ est requis.</label>
+                  <div class="col-md-6">
+                    <input id="url" name="url" type="text" class="form-control input-md" required="">
+                    <span class="help-block">L'URL complet du site (ex: https://www.example.com)</span>
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="source">UTM Source</label>
+                  <label class="error" for="source" id="source_error">Ce champs est requis.</label>
+                  <div class="col-md-4">
+                    <select id="source" name="source" class="form-control">
+
+                    </select>
+                    <script>
+                      var select = document.getElementById("source");
+
+                      var options = ['digitalisme',
+                        'k2b',
+                        'timeone',
+                        'cardatat',
+                        'adventure',
+                        'planet.fr',
+                        'tradedoubler',
+                        'seloger',
+                        'selogerneuf',
+                        'bellesdemeures',
+                        'immoneuf',
+                        'pap',
+                        'explorimmoneuf',
+                        'logicimmo',
+                        'superimmoneuf',
+                        'paruvendu',
+                        'acheterlouer',
+                        'lavieimmo',
+                        'avendrealouer',
+                        'visiteonline',
+                        'acheterdansleneuf',
+                        'lesiteimmo',
+                        'proprieteslefigaro',
+                        'tuln',
+                        'immobilierneuf',
+                        'luxresidence',
+                        'leparisien',
+                        'nouvelobs',
+                        'liberation',
+                        'leboncoin',
+                        'lefigaro',
+                        'lemonde',
+                        'regiem',
+                        'lefigaro',
+                        'theeconomist',
+                        'facebook',
+                        'google',
+                        'linkedin',
+                        'twitter',
+                        'bing',
+                        'pinterest',
+                        'instagram',
+                        'youtube',
+                        'dailymotion',
+                        'wellpack',
+                        'leboncoin',
+                        'nativious',
+                        'acces-direct'
+                      ];
+
+                      for (var i = 0; i < options.length; i++) {
+                        var opt = options[i];
+                        var el = document.createElement("option");
+                        el.textContent = opt;
+                        el.value = opt;
+                        select.appendChild(el);
+                      }
+                    </script>
+
+                  </div>
+                </div>
+
+                <!-- Select Basic -->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="medium">UTM Medium</label>
+                  <label class="error" for="medium" id="medium_error">Ce champs est requis.</label>
+                  <div class="col-md-4">
+                    <select id="medium" name="medium" class="form-control">
+
+                    </select>
+                  </div>
+
+                  <script>
+                    var select = document.getElementById("medium");
+
+                    var options = ['social-cpc',
+                      'social-cpm',
+                      'social-cpl',
+                      'search-cpc',
+                      'emailing-cpc',
+                      'emailing-optin',
+                      'emailing-retargeting',
+                      'emailing-alerte',
+                      'emailing-cpl',
+                      'emailing-cpm',
+                      'sms-cpc',
+                      'sms-cpl',
+                      'sms-optin',
+                      'sms-cpm',
+                      'display-cpc',
+                      'display-cpv',
+                      'display-retargeting',
+                      'display-cpl',
+                      'dispaly-cpm',
+                      'display-app',
+                      'native-cpc'
+                    ];
+
+                    for (var i = 0; i < options.length; i++) {
+                      var opt = options[i];
+                      var el = document.createElement("option");
+                      el.textContent = opt;
+                      el.value = opt;
+                      select.appendChild(el);
+                    }
+                  </script>
+
+
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+
+                  <label class="col-md-4 control-label" for="campaign">Date début </label>
+
+                  <div class="col-md-4">
+
+                    <input type="date" id="date"  placeholder="dd-mm-yyyy" value="2022-05-22">
+                    
+
+                    <span class="help-block">Date de début de la campagne</span>
+                  </div>
+
+                </div>
+
+
+
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="campaign">Ville</label>
+                  <div class="col-md-4">
+                    <input id="ville" style="text-transform: lowercase;" type="text" class="form-control input-md">
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="campaign">Nom du Programme </label>
+                  <div class="col-md-4">
+                    <input id="nomprogramme" type="text" class="form-control input-md">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="campaign">Tranche</label>
+                  <div class="col-md-4">
+                    <select id="tranche" name="medium" class="form-control">
+
+                    </select>
+                  </div>
+                </div>
+                <script>
+                  var select = document.getElementById("tranche");
+
+                  var options = ['tranche1',
+                    'tranche2',
+                    'tranche3',
+                  ];
+
+                  for (var i = 0; i < options.length; i++) {
+                    var opt = options[i];
+                    var el = document.createElement("option");
+                    el.textContent = opt;
+                    el.value = opt;
+                    select.appendChild(el);
+                  }
+                </script>
+
+
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="campaign">Phase</label>
+                  <div class="col-md-4">
+                    <select id="phase" name="medium" class="form-control">
+
+                    </select>
+                  </div>
+                </div>
+                <script>
+                  var select = document.getElementById("phase");
+
+                  var options = ['lco',
+                    'relance',
+                    'teasing',
+                    'avp',
+                    'po',
+                    'habitant',
+
+                  ];
+
+                  for (var i = 0; i < options.length; i++) {
+                    var opt = options[i];
+                    var el = document.createElement("option");
+                    el.textContent = opt;
+                    el.value = opt;
+                    select.appendChild(el);
+                  }
+                </script>
+
+
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="campaign">Cible</label>
+                  <div class="col-md-4">
+                    <select id="cible" class="form-control">
+                    </select>
+                  </div>
+                </div>
+
+                <script>
+                  var select = document.getElementById("cible");
+
+                  var options = ['rp',
+                    'invest',
+                    'all',
+                  ];
+
+                  for (var i = 0; i < options.length; i++) {
+                    var opt = options[i];
+                    var el = document.createElement("option");
+                    el.textContent = opt;
+                    el.value = opt;
+                    select.appendChild(el);
+                  }
+                </script>
+
+
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="campaign">Offre spéciale</label>
+                  <div class="col-md-4">
+                    <select id="offre" name="medium" class="form-control">
+
+                    </select>
+                  </div>
+                </div>
+                <script>
+                  var select = document.getElementById("offre");
+
+                  var options = ['n', 'os'];
+
+                  for (var i = 0; i < options.length; i++) {
+                    var opt = options[i];
+                    var el = document.createElement("option");
+                    el.textContent = opt;
+                    el.value = opt;
+                    select.appendChild(el);
+                  }
+                </script>
+
+                <div class="form-group">
+
+                  <label class="col-md-4 control-label" for="campaign">Numéro de job</label>
+                  <div class="col-md-4">
+                    <input oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" id="numerojob" type="text"  class="form-control input-md" maxlength="6">
+                    <span class="help-block">Le numéro de job (ex:2238)</span>
+                  </div>
+                </div>
+
+
+              </fieldset>
+            </form>
+
+          </div>
+          <div class="panel-footer">
+            <form id='urlz' class="form-horizontal">
+              <fieldset>
+                <!-- Form Name -->
+                <legend>Génération du lien de tracking</legend>
+                <!-- Textarea -->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="output">Lien généré</label>
+                  <div class="col-md-4">
+                    <textarea rows="10" class="form-control" id="output" name="output">default text</textarea>
+                  </div>
+                </div>
+
+                <!-- Button (Double) -->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="share">Partager le lien</label>
+                  <div class="col-md-8">
+                    <button id="share" name="share" data-clipboard-target="#output" class="btn btn-primary">Copier l'
+                      URL</button>
+                    <!--button id="shorten" name="shorten" class="btn btn-info">Convert URL to Short Link</button -->
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/container-->
+  <div class="divider"></div>
+
+  <hr>
+
+  <footer>
+    <p class="text-center">&copy; 360° FAHRENHEIT</p>
+  </footer>
+  </div> <!-- /container -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.1/clipboard.min.js"></script>
+  <script src="js/vendor/bootstrap.min.js"></script>
+
+
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <script type="text/javascript">
+    $(function () {
+
+      $('.error').hide();
+
+
+      var clipboard = new Clipboard('#share');
+
+      clipboard.on('success', function (e) {
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+
+        e.clearSelection();
+      });
+
+      clipboard.on('error', function (e) {
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+      });
+
+      $('#urlz').on('submit', function (e) {
+        e.preventDefault();
+      });
+
+      $("#campaign_info").on("change", function (e) {
+        e.preventDefault();
+
+        $('.error').hide();
+
+        var url = $('input#url').val(),
+          nomprogramme = $('input#nomprogramme').val(),
+          tranche = $('select#tranche').val(),
+          ville = $('input#ville').val(),
+          date = new Date($('input#date').val()),
+          month = date.getMonth(),
+          cible = $('select#cible').val(),
+          phase = $('select#phase').val(),
+          offre = $('select#offre').val(),
+          numerojob = $('input#numerojob').val(),
+          year = date.getFullYear(),
+          source = $('select#source').val(),
+          medium = $('select#medium').val();
+
+
+
+
+
+        if (nomprogramme && ville && source && cible && medium && phase && url && date && offre && tranche &&
+          numerojob) {
+
+          month += 1;
+
+          if (0 < month < 10) {
+
+            month = String(month);
+            month = '0' + month;
+            year = String(year);
+            year = year.substring(2);
+
+          } else {
+            month = String(month);
+          }
+          var url_string = url + '?utm_source=' + source + '&utm_medium=' + medium + '&utm_campaign=' + month +
+            year + '-' + ville + '-' + nomprogramme + '-' + tranche + '-' + phase + '-' + cible + '-' + offre +
+            '-' + numerojob;
+          $('#output').val(url_string);
+        } else {
+          url_string = '';
+          $('#output').val(url_string);
+          return false;
+        }
+
+      });
+
+    });
+  </script>
+</body>
+
+</html>
